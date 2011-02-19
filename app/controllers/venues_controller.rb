@@ -17,7 +17,7 @@ class VenuesController < ApplicationController
     result = fs.search(:ll => "#{params[:lat]},#{params[:lon]}",:query => params[:q])["response"]
     venues = []
     result["groups"].each do |group|
-      venues += group["items"]
+      venues += group["items"] if group["name"] == "Nearby"
     end
 
     venues.sort! {|a, b| b["stats"]["checkinsCount"] <=> a["stats"]["checkinsCount"]}
