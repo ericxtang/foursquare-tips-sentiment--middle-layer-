@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    if params[:lat].blank? || params[:lon].blank? || params[:query].blank?
+    if params[:lat].blank? || params[:lon].blank?
       render :json => {:errors => "Need to pass in a lat and a lon"} and return
     end
     fs = Foursquare::Venue.new("T4ZOBBXF3AK522ZJHAWZTGELNNFUSQF4BC4HA4XLWJEAVZWD")
