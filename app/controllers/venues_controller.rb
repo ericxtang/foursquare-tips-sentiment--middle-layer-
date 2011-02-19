@@ -29,6 +29,7 @@ class VenuesController < ApplicationController
       v["id"]
     end
     scores = fetch_scores(venue_ids)
+    render :text => "score fetching failed", :status => 400 and return
     result = scores.zip(venues).collect do |tuple|
       {
         :venue_id => tuple[0]["venue_id"],
@@ -44,5 +45,6 @@ class VenuesController < ApplicationController
   def fetch_scores(venue_ids)
     url = "http://foursquare.xanthas.net/pull_tips.php?#{venue_ids.join(",")}"
     results = JSON.parse(Net::HTTP.get(URI.parse(url)))
+    false if results.count != venue_ids.count
   end
 end
