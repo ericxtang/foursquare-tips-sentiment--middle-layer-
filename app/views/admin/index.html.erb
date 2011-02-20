@@ -1,0 +1,17 @@
+
+<table>
+  <% for collection in @mongo_collections %>
+    <%= render :partial => "mongo_collection", :locals => {:collection => collection} %>
+  <% end %>
+</table>
+
+<div style="margin-top:30px"><b>Load points collection</b></div>
+<% form_tag delete_collection_admin_index_path do%>
+  <%= select_tag "collection", options_from_collection_for_select(@mongo_collections, "name", "name") %>
+  <%= submit_tag "delete" %>
+<% end %>
+
+<div style="margin-top:30px"><b>Load Nabes</b></div>
+<% form_tag load_nabes_admin_index_path do%>
+  <%= submit_tag "load" %>
+<% end %>

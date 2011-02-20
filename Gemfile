@@ -4,6 +4,8 @@ gem 'rails', '3.0.3'
 gem 'ruby-debug'
 gem 'json'
 gem 'foursquare-api', :git => "https://github.com/ronaldwan/foursquare-api.git"
+gem 'mongo'
+gem 'bson_ext'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

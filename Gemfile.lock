@@ -35,6 +35,8 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.7)
+    bson (1.2.2)
+    bson_ext (1.2.2)
     builder (2.1.2)
     columnize (0.3.2)
     erubis (2.6.6)
@@ -48,6 +50,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mongo (1.2.2)
+      bson (>= 1.2.2)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -83,8 +87,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   foursquare-api!
   json
+  mongo
   rails (= 3.0.3)
   ruby-debug
   sqlite3-ruby

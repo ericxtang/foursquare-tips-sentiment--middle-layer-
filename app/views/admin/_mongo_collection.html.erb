@@ -1,0 +1,10 @@
+<tr>
+  <td><%= collection.name%>:</td>
+  <td> <%= collection.count %> records</td>
+  <td>
+  <%= form_tag delete_collection_admin_index_path do %>
+    <%= hidden_field_tag (:name, "#{collection.name}") %>
+    <%= submit_tag "delete" %>
+  <% end %>
+  </td>
+</tr>

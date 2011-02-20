@@ -2,6 +2,14 @@ FoursquareHack::Application.routes.draw do
 
   resource :venues do
   end
+
+  resources :admin do
+    collection do
+      post :load_nabes
+      post :delete_collection
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
