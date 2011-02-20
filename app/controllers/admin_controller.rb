@@ -19,6 +19,7 @@ class AdminController < ApplicationController
 
   def load_nabes()
     @db["nabes"].insert({:name => "lower east side", :top_right =>{:lat => 40.71785916529029, :lon => -73.9873194694519}, :bottom_left => {:lat => 40.71561477332607, :lon => -73.99334907531738}})
+    @db["nabes"].insert({:name => "soho", :top_right =>{:lat => 40.72483581359807, :lon => -73.99467945098877}, :bottom_left => {:lat => 40.72233145987863, :lon => -74.00347709655762}})
     redirect_to :controller => :admin, :action => :index
   end
 

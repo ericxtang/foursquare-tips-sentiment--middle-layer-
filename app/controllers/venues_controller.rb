@@ -62,8 +62,8 @@ class VenuesController < ApplicationController
 
   def get_connections
     uri = URI.parse(ENV['MONGOHQ_URL'])
-    @db = Mongo::Connection.new(ENV['MONGHQ_URL'])["sentiment"]#from_uri(ENV['MONGOHQ_URL'])["sentiment"]
-    @places_coll = @db["places"]
+#    @db = Mongo::Connection.new(ENV['MONGHQ_URL'])["sentiment"]#from_uri(ENV['MONGOHQ_URL'])["sentiment"]
+#    @places_coll = @db["places"]
   end
 
   def create_points(top_right, bottom_left, edge_length)
