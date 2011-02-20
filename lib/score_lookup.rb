@@ -1,8 +1,8 @@
 
 module ScoreLookup
   def self.lookup(lat, lon)
-    uri = URI.parse(ENV['MONGOHQ_URL'])
-    @db = Mongo::Connection.new(ENV['MONGHQ_URL'])["sentiment"]#from_uri(ENV['MONGOHQ_URL'])["sentiment"]
+    #uri = URI.parse(ENV['MONGOHQ_URL'])
+    #@db = Mongo::Connection.new(ENV['MONGHQ_URL'])["sentiment"]#from_uri(ENV['MONGOHQ_URL'])["sentiment"]
 =begin
     cmd = BSON::OrderedHash.new
     cmd['geoNear'] = "places"
@@ -15,7 +15,7 @@ module ScoreLookup
       places
     else
 =end
-      @places_coll = @db["places"]
+      #@places_coll = @db["places"]
       fs = Foursquare::Venue.new("T4ZOBBXF3AK522ZJHAWZTGELNNFUSQF4BC4HA4XLWJEAVZWD")
       result = fs.search(:ll => "#{lat},#{lon}")["response"]
       venues = []
