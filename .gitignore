@@ -14,3 +14,4 @@ vendor/bundler_gems
 *.orig
 tmp/
 .sass-cache
+.swp
